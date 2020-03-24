@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        
+        <!-- Mobile Specific Metas-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- FONT-->
+<!--        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">-->
+
+        <!-- CSS-->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/style.css"/>
+        <title>Dark Sky Intro</title>
+    </head>
+    
+    <body>
+        <script src="skycons.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+        
+        <script type="text/javascript">
+        
+            //$ to access Jquery elements
+        $(document).ready(function(){
+           
+            // my API key
+            var key = '85221f087641994187e373440c459733';
+            
+            //API call
+            var url = 'https://api.darksky.net/forecast/' + key + '/-35.2809,149.1300?units=auto&callback=?';
+            //make request to server using api call ? is seperate
+            $.getJSON(url, function(data){
+                //output request
+                console.log(data); //achieve the data to console
+                
+                //get current temperature
+                console.log(data.currently.temperature);
+
+                //set the span in the h2 tag
+                $('.current span').html(data.currently.temperature)
+                
+                //get summary and add to html tag
+                var summary = data.currently.summary;
+                $('.summary ').html(summary);//overwrite the currently that class. in this case summary
+                
+                //get the date
+                console.log(data.currently.time);
+                
+                //create new JS Date object
+                var now = new Date(data.currently.time*1000);
+                console.log(now);
+                //add it to the html tag
+                $('.time').html(now.toDateString() + ', ' +now.toLocaleTimeString())
+               
+                //Humidity
+                 $('.humidity span').html(data.currently.humidity);
+                
+                //get the icon
+                const {icon} = data.currently;
+               
+                /*//set icon
+                setIcons(icon, document.querySelector(".icon"));*/
+            });
+        /*   function setIcons(icon, iconID){
+                var skycons = new Skycons();
+                const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+                skycons.play();
+                return skycons.set(iconID, Skycons[currentIcon]);
+                
+            } */
+        });
+           
+        </script>
+        <!--<script src="app.js"></script>-->
+        <div class="content">
+            
+            <!-- set the content of these tags in the jquery-->
+            <h1>Weather</h1>
+            <canvas id="icon" width="128" height="128"></canvas>
+            <p class="time"></p>
+            
+            <h2 class="current">Current temp is: <span></span>&deg;C</h2>
+            
+            <h3>Humidity</h3>
+            <p class="humidity">The humidity is: <span></span>%</p>
+            
+            <h3>Summary</h3>
+            <p class="summary"></p>
+            
+        </div>
+        
+    </body>
+    
+</html>
