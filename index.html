@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- FONT-->
-    <!--        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">-->
-
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
     <!-- CSS-->
-    <!--<link rel="stylesheet" href="css/normalize.css">-->
-    <!--<link rel="stylesheet" href="css/skeleton.css">-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Dark Sky Intro</title>
+        
+    <title>Weather application</title>
 </head>
 
 <body>
@@ -44,6 +44,7 @@
                 //get summary and add to html tag
                 var summary = data.currently.summary;
                 $('.summary ').html(summary); //overwrite the currently that class. in this case summary
+                
 
                 //get the date
                 console.log(data.currently.time);
@@ -51,11 +52,17 @@
                 //create new JS Date object
                 var now = new Date(data.currently.time * 1000);
                 console.log(now);
+                
                 //add it to the html tag
                 $('.time').html(now.toDateString() + ', ' + now.toLocaleTimeString())
 
                 //Humidity
-                $('.humidity span').html(data.currently.humidity);
+                $('.humidity span').html(data.currently.humidity *100);
+                
+                //Wind speed
+                $('.windSpeed span').html(data.currently.windSpeed);
+                
+                
 
                 //BEN: get the icon from the data and set a variable
                 var currentIcon = data.currently.icon;
@@ -68,27 +75,37 @@
 
                 //play the animation
                 skycons.play();
+                
             });
 
         });
     </script>
-    <!--<script src="js/app.js"></script>-->
-    <div class="content">
 
         <!-- set the content of these tags in the jquery-->
-        <h1>Weather</h1>
-        <canvas id="icon" width="128" height="128"></canvas>
-        <p class="time"></p>
-
-        <h2 class="current">Current temp is: <span></span>&deg;C</h2>
-
-        <h3>Humidity</h3>
-        <p class="humidity">The humidity is: <span></span>%</p>
-
-        <h3>Summary</h3>
-        <p class="summary"></p>
-
+    <div class="hero-image">
+        <div class="container">
+            <div class="row" >
+                <div class="eight columns" ><button style="margin-top: 30px;">Currently</button></div>
+                <div class="four columns" style="font-size: 15px; text-transform: uppercase; color: #555;" ><b><p class="time" style="margin-top: 35px;"></p></b></div>
+            </div>
+        </div>
+        <div class="eight columns" style="text-align: left; margin-left: 10%; margin-top: 70px;">
+            <canvas id="icon" width="96" height="96"></canvas>
+            <h1 class="current" style="font-size: 500%; font-weight: 900; color:#6e562f;"> <span></span>&deg;</h1>
+            <b><p style="font-size: 150%; text-transform: uppercase; color: #555;">Canberra</p></b>
+        </div>
     </div>
 
+    <table>
+      <tr>
+        <td><img src="css/img/wind-512.jpg" width="48" height="48"><strong><p class="windSpeed" style="color: #46bbfa;"><span></span> mph</p> </strong></td>
+        <td><img src="css/img/humidity-512.png" width="48" height="48"><strong><p class="humidity" style="color: #46bbfa;"><span></span> %</p></strong></td>
+        <td><img src="css/img/CLOUDY-512.png" width="48" height="48"><strong><p class="summary" style="color: #46bbfa;"></p></strong></td>
+      </tr>
+    </table>
+    
 </body>
+<footer>
+    <p>U3159636 - Weather application</p>
+</footer>
 </html>
