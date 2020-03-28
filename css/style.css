@@ -29,7 +29,8 @@ body, html {
     padding-top: 30px;
 }
 table, td, th {
-    border-left: 1px solid lightblue;
+    border-left: 1px solid white;
+    /*color:darkorange*/
     border-bottom: white;
     height: 25%;
 }
