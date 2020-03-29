@@ -11,13 +11,6 @@ body, html {
     background-size: cover;
     position: relative;
 }
-/*.hero-text{
-  text-align: left;
-  position:absolute;
-  left: 20%; 
-  top: 70%;
-  transform: translate(-50%, -50%);
-}*/
 .text{
     text-align: right;
     padding-right: 10%;
