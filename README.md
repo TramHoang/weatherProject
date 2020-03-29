@@ -22,6 +22,7 @@ during this process. I identified 4 essential information normally users want to
 ![image sample 2](https://d540vms5r2s2d.cloudfront.net/mad/uploads/mad_blog_5d50e696edd2c1565582998.png)
 
 There is a hero image on the website that influenced the central theme for the application. The yellow colour creates the feel of a warm and colourful vibe. On top of the image will show the date and a small button box to let the user know that all the information is up to date. The icon and the temperature are located on the left corner of the image. The reason I did this because it creates neatly looking compare to when I put the icon and degree in the centre image. Under the image, I divided into three sections to display the wind speed, humidity and summary. I also put a small icon on each section, so the user can know what the number is displaying for.
+![image of my app](/css/img/my app.png)
 In this stage, I used the framework from the [Skeleton](http://getskeleton.com/). It helps me with the responsive function of the website. Therefore, if the size is changed,  it will not affect much the overall order of the information displaying, and keep the consistence.
 I also add my stylesheet CSS to adjust the hero image size, as well as the table under it, to display the information of wind speed, humidity and summary nicely.
 
