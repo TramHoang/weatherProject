@@ -26,3 +26,5 @@ In this stage, I used the framework from the [Skeleton](http://getskeleton.com/)
 I also add my stylesheet CSS to adjust the hero image size, as well as the table under it, to display the information of wind speed, humidity and summary nicely.
 
 In conclusion, I have a chance to apply all the knowledge that I learned to do the project, such as JQuery and revise the design theory. There are still some functions I want to add to the application, for example, showing the list of hourly or make it more interactive to the user. Overall I satisfied with the outcome.
+
+547 words
