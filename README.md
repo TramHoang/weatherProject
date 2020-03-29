@@ -1,6 +1,5 @@
-# weatherProject
- 
-## Rational
+# Rationale
+
 For this assignment, I created a weather application online. The application will show the date, temperature, wind speed, humidity percentage as well as cloud cover at the time. For the development process, most of the code on the project is based on the video coding from Canvas. Firstly, I used API from dark sky to retrieve the information about the weather. 
 ```html
     // my API key
